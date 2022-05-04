@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner nPrime = new Scanner(System.in);
+    String number;
+    
+    System.out.println("How many prime numbers do you want?");
+    number = nPrime.nextLine();
+    int n = Integer.valueOf(number);
+    
+    if(n<1) {
+      System.out.println("Silly goose, you can't have "+ n +" number of primes! Try a positive integer instead!");
+    } else if(n==1) {
+      System.out.println("Generating the first prime number!");
+      } else {
+      System.out.println("Generating the first " + number + " prime numbers!");
+      }
+      
+    if(n>0) {
+      int i = 3;
+      //second prime
+      int g = 1;
+      //number of primes found + 1
+      int h = 2;
+      //moding number
+      System.out.println("2");
+      while(g<n) {
+        //only want this many primes
+        while(i>h && (i%h)!=0) {
+            h++;
+        }
+        if(i==h) {
+          System.out.println(i);
+          g++;
+        }
+        i++;
+        h=2;
+        }
+      System.out.println("Done!");
+      }
+      
+    }
+  }
